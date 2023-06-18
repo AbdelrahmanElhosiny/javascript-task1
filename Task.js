@@ -124,20 +124,21 @@ const dataBase = [
 //   return names;
 // }
 
-const names = dataBase.filter(
-  (n) => n.address.city === "Alex" && n.age >= 30 && n.age <= 45
-);
+// const names = dataBase.filter(
+//   (n) => n.address.city === "Alex" && n.age >= 30 && n.age <= 45
+// );
 
-const getNames = ({ maxAge, minAge }, cityName) =>
-  dataBase
-    .filter(
-      ({ age, address: { city } }) =>
-        city === cityName && age >= maxAge && age <= minAge
-    )
-    .map(({ name }) => name);
+// const getNames = ({ maxAge, minAge }, cityName) =>
+//   dataBase
+//     .filter(
+//       ({ age, address: { city } }) =>
+//         city === cityName && age >= maxAge && age <= minAge
+//     )
+//     .map(({ name }) => name);
 
-let result = getNames({ maxAge: 30, minAge: 10 }, "Alex");
-console.log("🚀 ~ file: Task.js:140 ~ result:", result);
+// let result = getNames({ maxAge: 30, minAge: 10 }, "Alex");
+// console.log("🚀 ~ file: Task.js:140 ~ result:", result);
+
 // 4- Create a function that prints the "names" of people that have (fields) ==> ([field_1, filed_2, ...])
 
 // ---------------------------- PART 2 ----------------------------
