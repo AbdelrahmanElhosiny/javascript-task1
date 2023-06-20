@@ -128,19 +128,31 @@ const dataBase = [
 //   (n) => n.address.city === "Alex" && n.age >= 30 && n.age <= 45
 // );
 
-const getNames = ({ maxAge, minAge }, cityName) =>
-  dataBase
-    .filter(
-      ({ age, address: { city } }) =>
-        city === cityName && age <= maxAge && age >= minAge
-    )
-    .map(({ name }) => name);
+// const getNames = ({ maxAge, minAge }, cityName) =>
+//   dataBase
+//     .filter(
+//       ({ age, address: { city } }) =>
+//         city === cityName && age <= maxAge && age >= minAge
+//     )
+//     .map(({ name }) => name);
 
-let result = getNames({ maxAge: 40, minAge: 10 }, "Alex");
-console.log("🚀 ~ file: Task.js:140 ~ result:", result);
+// let result = getNames({ maxAge: 40, minAge: 10 }, "Alex");
+// console.log("🚀 ~ file: Task.js:140 ~ result:", result);
 
 // 4- Create a function that prints the "names" of people that have (fields) ==> ([field_1, filed_2, ...])
 
+// const getNames = (fieldName) =>
+//   dataBase.filter((fields) => fields.fields.includes(fieldName));
+// // .map(({ name }) => name);
+// let result = getNames("marketing");
+// console.log(result);
+
+const getNames = (fieldName) =>
+  dataBase
+    .filter(({ fields }) => fields.includes(fieldName))
+    .map(({ name }) => name);
+let result = getNames("marketing");
+console.log(result);
 // ---------------------------- PART 2 ----------------------------
 
 // 1- Create a function that Edit person's city of living, get person by (name) ==> (name, cityName)
