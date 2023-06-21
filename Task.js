@@ -71,7 +71,7 @@ const dataBase = [
 
     fields: ["frontend-development", "ux-design", "graphic-design"],
   },
-];
+]
 
 // ---------------------------- PART 1 ----------------------------
 
@@ -147,12 +147,14 @@ const dataBase = [
 // let result = getNames("marketing");
 // console.log(result);
 
-const getNames = (fieldName) =>
-  dataBase
-    .filter(({ fields }) => fields.includes(fieldName))
-    .map(({ name }) => name);
-let result = getNames("marketing");
-console.log(result);
+const getNames = (fieldNames) =>
+  fieldNames.map((fieldName) =>
+    dataBase
+      .filter(({ fields }) => fields && fields.includes(fieldName))
+      .map(({ name }) => name)
+  )
+let result = getNames(["marketing", "data-analysis"])
+console.log(result)
 // ---------------------------- PART 2 ----------------------------
 
 // 1- Create a function that Edit person's city of living, get person by (name) ==> (name, cityName)
