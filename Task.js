@@ -148,7 +148,7 @@ const dataBase = [
 // console.log(result);
 
 const getNames = (fieldNames) =>
-  fieldNames.reduce((fieldName) =>
+  fieldNames.map((fieldName) =>
     dataBase
       .filter(({ fields }) => fields && fields.includes(fieldName))
       .map(({ name }) => name)
